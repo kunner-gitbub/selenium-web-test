@@ -1,23 +1,16 @@
 package com.kun.tests;
 
-/**
- * ClassName: GoogleSearchTest
- * Package: com.kun.tests
- * Description:
- *
- * @Author KunJiang
- * @Create 11/21/24 10:37 AM
- * @Version 1.0
- */
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import io.github.bonigarcia.wdm.WebDriverManager;
+import org.junit.jupiter.api.Test;
 
 public class GoogleSearchTest {
-    public static void main(String[] args) {
+
+    @Test
+    public void testGoogleSearch() {
         // Setup WebDriver using WebDriverManager
         WebDriverManager.chromedriver().setup();
 
@@ -44,4 +37,3 @@ public class GoogleSearchTest {
         }
     }
 }
-
