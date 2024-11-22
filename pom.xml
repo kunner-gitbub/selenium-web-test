@@ -43,6 +43,14 @@
             <version>5.11.3</version>
             <scope>test</scope>
         </dependency>
+        <!-- https://mvnrepository.com/artifact/org.testng/testng -->
+        <dependency>
+            <groupId>org.testng</groupId>
+            <artifactId>testng</artifactId>
+            <version>7.10.2</version>
+            <scope>test</scope>
+        </dependency>
+
     </dependencies>
 
     <build>
@@ -87,7 +95,19 @@
                     </execution>
                 </executions>
             </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>3.0.0-M5</version>
+                <configuration>
+                    <suiteXmlFiles>
+                        <suiteXmlFile>src/test/resources/testng.xml</suiteXmlFile> <!-- 确保这个路径是正确的 -->
+                    </suiteXmlFiles>
+                    <reportFormat>html</reportFormat> <!-- 用于指定报告格式 -->
+                </configuration>
+            </plugin>
         </plugins>
     </build>
+
 
 </project>
