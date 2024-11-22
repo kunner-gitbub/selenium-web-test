@@ -6,6 +6,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import com.kun.tests.GetProperty;
 
 /**
  * ClassName: SeperateMethodTest
@@ -19,17 +20,27 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 public class MethodTest {
     static WebDriver driver;
+    public static String browser;
+
     @Test
-    public void test(){
+    public void test() {
+        setBrowser();
         setBrowserConfig();
         runTest();
         System.out.println("*****second test*********");
     }
-    public static void setBrowserConfig(){
-        WebDriverManager.chromedriver().setup();
-        driver = new ChromeDriver();
+
+    public static void setBrowser(){
+        browser = "chrome";
     }
-    public static void runTest(){
+    public static void setBrowserConfig() {
+        if (browser.equals("chrome")) {
+            WebDriverManager.chromedriver().setup();
+            driver = new ChromeDriver();
+        }
+    }
+
+    public static void runTest() {
         try {
             // Open Google
             driver.get("https://www.google.com");
