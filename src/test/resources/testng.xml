@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="Test Suite" parallel="false">
+    <listeners>
+        <listener class-name="com.kun.listeners.CustomTestListener"/>
+    </listeners>
+
+    <test name="ListenerTest">
+        <classes>
+            <class name="com.kun.tests.ListenerTest"/>
+        </classes>
+    </test>
+</suite>
